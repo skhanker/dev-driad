@@ -123,7 +123,7 @@
 
 		public function testReservedIDFormat($m)
 		{
-			$this->assertRegExp('/[a-z]+-[a-z]+-?[0-9]{1,9}/i', $m['_id'], "Expected string in format [a-z]+-[a-z]+-?[0-9]{1,9} but got {$m['_id']}");
+			$this->assertRegExp('/[a-z]+[-_\.\s]?[a-z]+[-_\.\s]?[a-z0-9]{1,9}/i', $m['_id'], "Expected string in format [a-z]+-[a-z]+-?[0-9]{1,9} but got {$m['_id']}");
 		}
 
 		/**
