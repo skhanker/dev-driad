@@ -17,7 +17,9 @@
 
 		protected function setUp()
 		{
-			// fwrite(STDOUT, "\n\n" . __METHOD__ . "\n");
+            fwrite(STDOUT, "\n\n" . __METHOD__ . "\n");
+            parent::setUp();
+            $this->model = new CDMIngest('{    "_id": "DL UID",    "_type": "DL TYPE: ITEM",    "_compound": "IS COMPOUND OBJ? (t/f)",    "_created": "DL INGEST TIMESTAMP",    "_updated": "DL UPDATED TIMESTAMP",    "_thumb": "THUMBNAIL URL",    "_theme": "THEME",    "_mediaHandler": "MEDIA HANDLER",    "sourceResource": {        "@type": "edm:ProvidedCHO",        "sourceID": "ID (original)",        "title": {            "eng": "TITLE",            "jap": "JAPANESE TITLE"        },        "creator": "CREATOR",        "contributor": "CONTRIBUTOR",        "publisher": "PUBLISHER",        "description": "DESCRIPTION",        "subject": [            {                "name": "SUBJECT NAME"            },            {                "name": "SUBJECT NAME"            }        ],        "extent": "EXTENT",        "collection": "SOURCE COLLECTION",        "format": "FORMAT",        "type": "TYPE",        "genre": "GENRE",        "temporal": {            "date": "DATE",            "sort": "SORT",            "decade": "DECADE"        },        "source": {            "@id": "URI?",            "name": "SOURCE NAME"        },        "rights": "SOURCE RIGHTS",        "geo": {            "name": "GEO NAME",            "latLong": "LAT/LONG"        }    },    "webResource": {        "@type": "edm:WebResource",        "@id": "WEBRESOURCE ID",        "format": "FORMAT",        "rights": "WEB OBJECT RIGHTS",        "type": "DCMITYPE",        "collection": "COLLECTION",        "hasPart": [            "PAGE 1 URL",            "PAGE 2 URL",            "PAGE etc. URL"        ]    },    "originalRecord": "ORIGINAL RECORD"}');
         }
 
 		protected function assertPreConditions()
@@ -32,7 +34,9 @@
 
 		protected function tearDown()
 		{
-			//fwrite(STDOUT, __METHOD__ . "\n");
+            $this->model = null;
+            parent::tearDown();
+            fwrite(STDOUT, __METHOD__ . "\n");
 		}
 
 		public static function tearDownAfterClass()
