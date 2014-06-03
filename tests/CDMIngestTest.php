@@ -4,7 +4,6 @@
 
     class CDMIngestTest extends PHPUnit_Framework_TestCase
 	{
-
         /**
          * @var $model CDMIngest
          */
@@ -60,15 +59,16 @@
          * @depends testGetModelAsArray
          * @dataProvider modelProvider
          */
-        public function testModelLength(array $m)
+        public function testModelLength($m)
         {
             $this->assertCount($this->model->getModelLength(), $m);
         }
 
 		/**
+         * @depends testGetModelAsArray
 		 * @dataProvider modelProvider
 		 */
-		public function testReservedID(array $m)
+		public function testReservedID($m)
 		{
 			$this->assertArrayHasKey('_id',$m);
 		}
@@ -177,7 +177,7 @@
 		public function modelProvider()
 		{
 			$arr = array();
-			$mod = $this->model->getModelAsArray();
+			$mod = json_decode($this->model->getModel(),true);
 			foreach ($mod as $k => $v){
 				$arr[$k] = $v;
 			}
