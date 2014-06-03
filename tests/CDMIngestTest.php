@@ -57,7 +57,7 @@
          */
         public function testModelLength(array $m)
         {
-            $this->assertCount($this->model->getModelLength(), $m);
+            $this->assertCount(self::$model->getModelLength(), $m);
         }
 
 		/**
