@@ -103,7 +103,7 @@
 		 */
 		public function testReservedID(array $m)
 		{
-			$this->assertArrayHasKey('--id',$m);
+			$this->assertArrayHasKey('_id',$m);
 		}
 
 		/**
