@@ -107,6 +107,26 @@
 		}
 
 		/**
+		 * @depends testReservedID
+		 * @dataProvider modelProvider
+		 */
+
+		public function testReservedIDInternalType($m)
+		{
+			$this->assertInternalType('string', $m['_id']);
+		}
+
+		/**
+		 * @depends testReservedIDInternalType
+		 * @dataProvider modelProvider
+		 */
+
+		public function testReservedIDFormat($m)
+		{
+			$this->$this->assertRegExp('/[a-z]{1,2}-[a-z]{1,2}-[0-9]{1,9}/i', $m['_id']);
+		}
+
+		/**
 		 * @dataProvider modelProvider
 		 */
 		public function testReservedType(array $m)
