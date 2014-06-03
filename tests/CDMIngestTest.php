@@ -68,7 +68,7 @@ class CDMIngestTest extends PHPUnit_Framework_TestCase
 
     public static function setUpBeforeClass()
     {
-        fwrite(STDOUT, __METHOD__ . "\n\n");
+        fwrite(STDOUT, __METHOD__ . "\n");
     }
 
     protected function setUp()
@@ -93,12 +93,12 @@ class CDMIngestTest extends PHPUnit_Framework_TestCase
 
     public static function tearDownAfterClass()
     {
-        fwrite(STDOUT, "\n\n" . __METHOD__ . "\n");
+        fwrite(STDOUT, "\n" . __METHOD__ . "\n");
     }
 
     protected function onNotSuccessfulTest(Exception $e)
     {
-        fwrite(STDOUT, "\n" . __METHOD__ . "\n");
+        //fwrite(STDOUT, "\n" . __METHOD__ . "\n");
         //throw $e;
     }
 
