@@ -43,6 +43,22 @@
 		}
 
 
+        /**
+         * @dataProvider modelProvider
+         */
+        public function testGetModelAsArray($m)
+        {
+            $this->assertInternalType('array', $m);
+        }
+
+        /**
+         * @depends testGetModelAsArray
+         * @dataProvider modelProvider
+         */
+        public function testModelLength(array $m)
+        {
+            $this->assertCount($this->model->getModelLength(), $m);
+        }
 
 		/**
 		 * @dataProvider modelProvider
@@ -75,7 +91,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testReservedType(array $m)
+		public function testReservedType($m)
 		{
 			$this->assertArrayHasKey('_type',$m);
 		}
@@ -83,7 +99,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testReservedCompund(array $m)
+		public function testReservedCompund($m)
 		{
 			$this->assertArrayHasKey('_compound',$m);
 		}
@@ -91,7 +107,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testReservedCreated(array $m)
+		public function testReservedCreated($m)
 		{
 			$this->assertArrayHasKey('_created',$m);
 		}
@@ -99,7 +115,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testReservedUpdated(array $m)
+		public function testReservedUpdated($m)
 		{
 			$this->assertArrayHasKey('_updated',$m);
 		}
@@ -107,7 +123,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testReservedThumb(array $m)
+		public function testReservedThumb($m)
 		{
 			$this->assertArrayHasKey('_thumb',$m);
 		}
@@ -115,7 +131,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testReservedTheme(array $m)
+		public function testReservedTheme($m)
 		{
 			$this->assertArrayHasKey('_theme',$m);
 		}
@@ -123,7 +139,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testReservedMediaHandler(array $m)
+		public function testReservedMediaHandler($m)
 		{
 			$this->assertArrayHasKey('_mediaHandler',$m);
 		}
@@ -131,7 +147,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testSourceResource(array $m)
+		public function testSourceResource($m)
 		{
 			$this->assertArrayHasKey('sourceResource',$m);
 		}
@@ -139,7 +155,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testWebResource(array $m)
+		public function testWebResource($m)
 		{
 			$this->assertArrayHasKey('webResource',$m);
 		}
@@ -147,7 +163,7 @@
 		/**
 		 * @dataProvider modelProvider
 		 */
-		public function testOriginalRecord(array $m)
+		public function testOriginalRecord($m)
 		{
 			$this->assertArrayHasKey('originalRecord',$m);
 		}
@@ -156,8 +172,8 @@
 		public function modelProvider()
 		{
 			$arr = array();
-			$json = json_decode($this->model->getModel(),true);
-			foreach ($json as $k => $v){
+			$mod = $this->model->getModelAsArray();
+			foreach ($mod as $k => $v){
 				$arr[$k] = $v;
 			}
 			return array(

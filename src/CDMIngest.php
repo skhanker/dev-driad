@@ -11,6 +11,19 @@
         private $model;
 
         /**
+         * @var int
+         */
+        private $modelLength = 11;
+
+        /**
+         * @return int
+         */
+        public function getModelLength()
+        {
+            return $this->modelLength;
+        }
+
+        /**
          * @param $model
          */
         function __construct($model)
@@ -32,6 +45,14 @@
         public function getModel()
         {
             return $this->model;
+        }
+
+        /**
+         * @return array
+         */
+        public function getModelAsArray()
+        {
+            return json_decode($this->model, true);
         }
 
 
