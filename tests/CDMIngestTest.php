@@ -1,6 +1,6 @@
 <?php
 
-    include __DIR__  . "../src/CDMIngest.php";
+    include __DIR__  . "/../src/CDMIngest.php";
 
     class CDMIngestTest extends PHPUnit_Framework_TestCase
 	{
