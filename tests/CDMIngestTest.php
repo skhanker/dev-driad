@@ -96,12 +96,6 @@
 			fwrite(STDOUT, "\n" . __METHOD__ . "\n");
 		}
 
-		protected function onNotSuccessfulTest(Exception $e)
-		{
-			//fwrite(STDOUT, "\n" . __METHOD__ . "\n");
-			throw $e;
-		}
-
 
 
 		/**
