@@ -11,8 +11,8 @@
 <script>
 	<?php
 		$image_info = getimagesize("/var/www/html/dev-driad/www/tiles/map.jpg");
-		echo "var w = {$image_info[0]}";
-		echo "var h = {$image_info[1]}";
+		echo "var w = {$image_info[0]};\n";
+		echo "var h = {$image_info[1]};\n";
 	 ?>
 	var map = L.map('map').setView([0, 0], 2);
 	L.tileLayer('tiles/{z}/{x}/{y}.png', {
