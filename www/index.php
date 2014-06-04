@@ -19,7 +19,7 @@
 
 	var map = L.map('map',{
 		crs: L.CRS.Simple
-	}).setView([-90, -180], 1);
+	}).setView([-90, -180], 4);
 
 	var southWest = map.unproject([0, w], map.getMaxZoom());
 	var northEast = map.unproject([h, 0], map.getMaxZoom());
