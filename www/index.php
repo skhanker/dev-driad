@@ -18,7 +18,6 @@
 	document.getElementById("map").style.height = h/3 + "px";
 
 	var map = L.map('map',{
-		//crs: L.CRS.EPSG3857
 		crs: L.CRS.Simple
 	}).setView([0, 0], 1);
 
@@ -31,7 +30,7 @@
 		minZoom: 1,
 		maxZoom: 4,
 		attribution: 'The University of British Columbia',
-		tms: false,
+		tms: true,
 		continuousWorld: false
 	}).addTo(map);
 
