@@ -20,7 +20,7 @@
 	var map = L.map('map',{
 		//crs: L.CRS.Simple,
 		minZoom: 1,
-		maxZoom: 4,
+		maxZoom: 4
 	}).setView([-90, -180], 4);
 
 	var southWest = map.unproject([0, w], map.getMaxZoom());
@@ -31,7 +31,9 @@
 	L.tileLayer('tiles/{z}/{x}/{y}.png', {
 		attribution: 'The University of British Columbia',
 		tms: true,
-		continuousWorld: false
+		continuousWorld: false,
+		noWrap: true,
+		reuseTiles: true
 	}).addTo(map);
 
 </script>
