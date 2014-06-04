@@ -18,17 +18,17 @@
 	document.getElementById("map").style.height = "100%";
 
 	var map = L.map('map',{
-		crs: L.CRS.Simple
+		crs: L.CRS.Simple,
+		minZoom: 1,
+		maxZoom: 4,
 	}).setView([-90, -180], 4);
 
 	var southWest = map.unproject([0, w], map.getMaxZoom());
 	var northEast = map.unproject([h, 0], map.getMaxZoom());
 
-	//map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+	map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
 	L.tileLayer('tiles/{z}/{x}/{y}.png', {
-		minZoom: 1,
-		maxZoom: 4,
 		attribution: 'The University of British Columbia',
 		tms: true,
 		continuousWorld: false
