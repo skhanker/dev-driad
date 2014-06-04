@@ -22,7 +22,7 @@
 		maxZoom: 4,
 		attribution: 'The University of British Columbia',
 		tms: true,
-		continuousWorld: false
+		continuousWorld: true
 	}).addTo(map);
 </script>
 </body>
