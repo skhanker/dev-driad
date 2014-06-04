@@ -27,14 +27,8 @@
 		maxZoom: 4,
 		attribution: 'The University of British Columbia',
 		tms: true,
-		continuousWorld: true
+		continuousWorld: false
 	}).addTo(map);
-
-	var m = {
-		x: 102,
-		y: 404
-	};
-	var marker = L.marker(map.unproject([m.x, m.y], map.getMaxZoom())).addTo(map);
 
 </script>
 </body>
