@@ -9,7 +9,7 @@
 <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
 
 <script>
-	<?
+	<?php
 		$image_info = getimagesize("/var/www/html/dev-driad/www/tiles/map.jpg");
 		echo "var w = {$image_info[0]}";
 		echo "var h = {$image_info[1]}";
