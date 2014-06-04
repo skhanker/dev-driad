@@ -21,7 +21,7 @@
 		//crs: L.CRS.Simple,
 		minZoom: 1,
 		maxZoom: 4
-	}).setView([-90, -180], 4);
+	}).setView([-0, -10], 4);
 
 	var southWest = map.unproject([0, w], map.getMaxZoom());
 	var northEast = map.unproject([h, 0], map.getMaxZoom());
@@ -32,9 +32,22 @@
 		attribution: 'The University of British Columbia',
 		tms: true,
 		continuousWorld: false,
-		noWrap: true,
-		reuseTiles: true
+		noWrap: true
 	}).addTo(map);
+
+	var marker = L.marker([51.5, -0.09]).addTo(map);
+
+	var circle = L.circle([51.508, -0.11], 500, {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5
+	}).addTo(map);
+
+	var polygon = L.polygon([
+		[51.509, -0.08],
+		[51.503, -0.06],
+		[51.51, -0.047]
+	]).addTo(map);
 
 </script>
 </body>
