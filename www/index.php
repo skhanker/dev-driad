@@ -20,9 +20,7 @@
 	L.tileLayer('tiles/{z}/{x}/{y}.png', {
 		minZoom: 1,
 		maxZoom: 4,
-		attribution: 'The University of British Columbia',
-		tms: true,
-		continuousWorld: true
+		attribution: 'The University of British Columbia'
 	}).addTo(map);
 </script>
 </body>
