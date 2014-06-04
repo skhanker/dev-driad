@@ -18,7 +18,7 @@
 	document.getElementById("map").style.height = "100%";
 
 	var map = L.map('map',{
-		crs: L.CRS.Simple,
+		//crs: L.CRS.Simple,
 		minZoom: 1,
 		maxZoom: 4,
 	}).setView([-90, -180], 4);
