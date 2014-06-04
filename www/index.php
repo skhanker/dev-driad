@@ -18,7 +18,7 @@
 	document.getElementById("map").style.height = h/3 + "px";
 
 	var map = L.map('map',{
-		crs: L.CRS.Simple
+		crs: L.CRS.EPSG3857
 	}).setView([0, 0], 1);
 
 	var southWest = map.unproject([0, w], map.getMaxZoom());
