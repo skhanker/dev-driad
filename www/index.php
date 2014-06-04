@@ -16,7 +16,7 @@
 	 ?>
 	document.getElementById("map").style.width = w/4 + "px";
 	document.getElementById("map").style.height = h/2 + "px";
-	var map = L.map('map').setView([0, 0], 2);
+	var map = L.map('map').setView([50, 100], 3);
 	L.tileLayer('tiles/{z}/{x}/{y}.png', {
 		minZoom: 1,
 		maxZoom: 4,
