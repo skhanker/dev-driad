@@ -24,7 +24,7 @@
 	var southWest = map.unproject([0, w], map.getMaxZoom());
 	var northEast = map.unproject([h, 0], map.getMaxZoom());
 
-	map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+	//map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
 
 	L.tileLayer('tiles/{z}/{x}/{y}.png', {
 		minZoom: 1,
