@@ -10,9 +10,9 @@
 
 <script>
 	var map = L.map('map').setView([0, 0], 2);
-	L.tileLayer('tiles/{z}/{x}/{y}.jpg', {
+	L.tileLayer('tiles/{z}/{x}/{y}.png', {
 		minZoom: 1,
-		maxZoom: 6,
+		maxZoom: 4,
 		attribution: 'The University of British Columbia',
 		tms: true
 	}).addTo(map);
