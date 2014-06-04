@@ -14,6 +14,8 @@
 		echo "var w = {$image_info[0]};\n";
 		echo "var h = {$image_info[1]};\n";
 	 ?>
+	document.getElementById("map").style.width = w + "px";
+	document.getElementById("map").style.height = h + "px";
 	var map = L.map('map').setView([0, 0], 2);
 	L.tileLayer('tiles/{z}/{x}/{y}.png', {
 		minZoom: 1,
