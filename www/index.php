@@ -16,12 +16,26 @@
 	 ?>
 	document.getElementById("map").style.width = w/4 + "px";
 	document.getElementById("map").style.height = h/2 + "px";
-	var map = L.map('map').setView([50, 100], 3);
-	L.tileLayer('tiles/{z}/{x}/{y}.png', {
+	var map = L.map('map',{
 		minZoom: 1,
 		maxZoom: 4,
-		attribution: 'The University of British Columbia'
+		crs: L.CRS.Simple
+	}).setView([50, 100], 3);
+	var southWest = map.unproject([0, w], map.getMaxZoom());
+	var northEast = map.unproject([h, 0], map.getMaxZoom());
+	map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+	L.tileLayer('tiles/{z}/{x}/{y}.png', {
+		attribution: 'The University of British Columbia',
+		tms: true,
+		continuousWorld: true
 	}).addTo(map);
+
+	var m = {
+		x: 102,
+		y: 404
+	};
+	var marker = L.marker(map.unproject([m.x, m.y], map.getMaxZoom())).addTo(map);
+
 </script>
 </body>
 </html>
