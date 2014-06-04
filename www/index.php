@@ -26,7 +26,7 @@
 	var southWest = map.unproject([0, w], map.getMaxZoom());
 	var northEast = map.unproject([h, 0], map.getMaxZoom());
 
-	map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
+	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
 	L.tileLayer('tiles/{z}/{x}/{y}.png', {
 		attribution: 'The University of British Columbia',
