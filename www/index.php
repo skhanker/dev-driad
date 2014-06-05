@@ -26,20 +26,16 @@
 		continuousWorld: true
 	});
 
-	var southWest = map.unproject([0, h], map.getMaxZoom());
-	var northEast = map.unproject([w, 0], map.getMaxZoom());
-	var mapBounds = new L.LatLngBounds(southWest, northEast);
-
-	map.fitBounds([[actualY(map.getMaxZoom(),mapBounds._southWest.lat),mapBounds._southWest.lng],[actualY(map.getMaxZoom(),mapBounds._northEast.lat),mapBounds._northEast.lng]]);
-
-	map.setView([0,actualY(map.getMaxZoom(),0)], 0);
-
 	var pb = map.getPixelBounds();
 	var po = map.getPixelOrigin();
-
 	var yOffset = pb.max.y - po.y/2;
 
-	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
+	var southWest = map.unproject([0, h + yOffset], map.getMaxZoom());
+	var northEast = map.unproject([w, 0 + yOffset], map.getMaxZoom());
+	var mapBounds = new L.LatLngBounds(southWest, northEast);
+
+	map.fitBounds([[mapBounds._southWest.lat,mapBounds._southWest.lng],[mapBounds._northEast.lat,mapBounds._northEast.lng]]);
+	map.setView([0,actualY(map.getMaxZoom(),0)], 0);
 
 	L.tileLayer(image + 'tiles/{z}/{x}/{y}.png', {
 		attribution: 'The University of British Columbia',
