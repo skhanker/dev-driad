@@ -28,8 +28,6 @@
 	var southWest = map.unproject([0, h], map.getMaxZoom());
 	var northEast = map.unproject([w, 0], map.getMaxZoom());
 
-	console.log(southWest);
-	console.log(northEast);
 	map.fitBounds(new L.LatLngBounds(southWest, northEast));
 
 	map.setView([0,0], 4);
@@ -51,6 +49,9 @@
 	};
 
 	var bounds = new L.LatLngBounds([map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())]);
+
+	console.log(bounds);
+
 	// create an orange rectangle
 	L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);
 	L.rectangle([southWest, northEast], {color: "#ff7800", weight: 1}).addTo(map);
