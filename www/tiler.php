@@ -48,10 +48,7 @@
 	$re = '/(\S*[\\|\/]{1})(\S*)?\.[jpg|png]?/';
 	preg_match($re, $argv[1], $matches);
 
-	fwrite(STDOUT, "Running Command: mkdir {$matches[1]}{$matches[2]}/tiles\r\n");
 	fwrite(STDOUT, "Running Command: gdal2tiles.py -p raster -r lanczos -z 0-{$zoom} -w none {$argv[1]}.png {$matches[1]}{$matches[2]}/tiles\r\n");
-
-	exec("mkdir {$matches[1]}{$matches[2]}/tiles");
 	exec("gdal2tiles.py -p raster -r lanczos -z 0-{$zoom} -w none {$argv[1]}.png {$matches[1]}{$matches[2]}/tiles");
 
 

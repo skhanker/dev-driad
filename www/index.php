@@ -13,7 +13,7 @@
 	document.getElementById("map").style.width = "100%";
 	document.getElementById("map").style.height = "100%";
 	<?php
-		echo "var image = tiles/'{$_REQUEST['image']}/';";
+		echo "var image = 'tiles/{$_REQUEST['image']}/';";
     ?>
 	var map = L.map('map',{
 		//crs: L.CRS.Simple,
