@@ -20,10 +20,9 @@
 		echo "var h = {$iinfo[1]};";
     ?>
 	var map = L.map('map',{
-		//crs: L.CRS.Simple,
+		crs: L.CRS.Simple,
 		maxZoom: 4,
 		minZoom: 0,
-		crs: L.CRS.EPSG4326,
 		continuousWorld: true
 	});
 
