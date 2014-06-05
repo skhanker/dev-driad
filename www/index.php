@@ -46,9 +46,9 @@
 	};
 
 	var bounds = [map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())];
-
 	// create an orange rectangle
 	L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);
+	L.rectangle([southWest, northEast], {color: "#ff7800", weight: 1}).addTo(map);
 </script>
 </body>
 </html>
