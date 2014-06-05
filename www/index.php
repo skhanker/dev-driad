@@ -60,7 +60,8 @@
 	L.rectangle([southWest, northEast], {color: "#ff7800", weight: 1}).addTo(map);
 
 	function actualY (z, y) {
-		return y - Math.pow(2, (z-2));
+		//return y - Math.pow(2, (z-2));
+		return Math.pow(2, (z - 2)) + y;
 	}
 </script>
 </body>
