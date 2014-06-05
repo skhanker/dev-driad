@@ -9,26 +9,21 @@
 <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
 
 <script>
-	<?php
-		$image_info = getimagesize("/Library/Server/Web/Data/Sites/Default/dev-driad/www/tiles/map.jpg");
-		echo "var w = {$image_info[0]};\n";
-		echo "var h = {$image_info[1]};\n";
-	 ?>
+
 	document.getElementById("map").style.width = "100%";
 	document.getElementById("map").style.height = "100%";
-
+	<?php
+		echo "var image = tiles/'{$_REQUEST['image']}/';";
+    ?>
 	var map = L.map('map',{
 		//crs: L.CRS.Simple,
 		minZoom: 1,
 		maxZoom: 4
-	}).setView([-0, -10], 4);
-
-	var southWest = map.unproject([0, w], map.getMaxZoom());
-	var northEast = map.unproject([h, 0], map.getMaxZoom());
+	}).setView([-0, 0], 4);
 
 	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
-	L.tileLayer('tiles/{z}/{x}/{y}.png', {
+	L.tileLayer(image + 'tiles/{z}/{x}/{y}.png', {
 		attribution: 'The University of British Columbia',
 		tms: true,
 		continuousWorld: false,
