@@ -56,12 +56,12 @@
 	console.log(actualY(map.getMaxZoom(),bounds._southWest.lng));
 
 	// create an orange rectangle
-	L.rectangle([[bounds._southWest.lat,actualY(map.getMaxZoom(),bounds._southWest.lng)],[bounds._northEast.lat,actualY(map.getMaxZoom(),bounds._northEast.lng)]], {color: "#ff7800", weight: 1}).addTo(map);
+	L.rectangle([[actualY(map.getMaxZoom(),bounds._southWest.lat),bounds._southWest.lng],[actualY(map.getMaxZoom(),bounds._northEast.lat),bounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
 	L.rectangle([southWest, northEast], {color: "#ff7800", weight: 1}).addTo(map);
 
 	function actualY (z, y) {
-		//return y - Math.pow(2, (z-2));
-		return Math.pow(3, (z - 2)) + y;
+		return y - Math.pow(2, (z-2));
+		//return Math.pow(2, (z - 2)) + y;
 	}
 </script>
 </body>
