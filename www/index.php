@@ -10,8 +10,8 @@
 
 <script>
 
-	document.getElementById("map").style.width = "100%";
-	document.getElementById("map").style.height = "100%";
+	//document.getElementById("map").style.width = "100%";
+	//document.getElementById("map").style.height = "100%";
 	<?php
 		$iinfo = getimagesize("/var/www/html/dev-driad/www/tiles/{$_REQUEST['image']}.jpg.png");
 
@@ -21,7 +21,8 @@
     ?>
 	var map = L.map('map',{
 		crs: L.CRS.Simple,
-		maxZoom: 4
+		maxZoom: 4,
+		minZoom: 0
 	}).setView([0,0], 4);
 
 	var southWest = map.unproject([0, h], map.getMaxZoom());
