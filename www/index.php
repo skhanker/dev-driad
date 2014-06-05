@@ -35,7 +35,7 @@
 	map.setView([0,actualY(map.getMaxZoom(),0)], 0);
 
 	var pb = map.getPixelBounds();
-	console.log(map.getBounds());
+	console.log(getPixelOrigin());
 
 	var yOffset = pb.max.y;
 
