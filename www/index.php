@@ -43,9 +43,9 @@
 
 	var m = {
 		t: 411,
-		l: actualY(map.getMaxZoom(),893),
+		l: 893,
 		b: 1325,
-		r: actualY(map.getMaxZoom(),955)
+		r: 955
 	};
 
 	var bounds = new L.LatLngBounds([map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())]);
@@ -53,7 +53,7 @@
 	console.log(bounds);
 
 	// create an orange rectangle
-	L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);
+	L.rectangle([[bounds._southWest.lat,actualY(map.getMaxZoom(),bounds._southWest.lng)],[bounds._northEast.lat,actualY(map.getMaxZoom(),bounds._northEast.lng)]], {color: "#ff7800", weight: 1}).addTo(map);
 	L.rectangle([southWest, northEast], {color: "#ff7800", weight: 1}).addTo(map);
 
 	function actualY (z, y) {
