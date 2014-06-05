@@ -62,8 +62,8 @@
 	L.rectangle([[actualY(map.getMaxZoom(),mapBounds._southWest.lat),mapBounds._southWest.lng],[actualY(map.getMaxZoom(),mapBounds._northEast.lat),mapBounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
 
 	function actualY (z, y) {
-		//return y - Math.pow(2, (z-2));
-		return Math.pow(2, (z - 2)) + y;
+		return y - Math.pow(2, (z-2));
+		//return Math.pow(2, (z - 2)) + y;
 	}
 </script>
 </body>
