@@ -32,7 +32,7 @@
 
 	map.fitBounds([[actualY(map.getMaxZoom(),mapBounds._southWest.lat),mapBounds._southWest.lng],[actualY(map.getMaxZoom(),mapBounds._northEast.lat),mapBounds._northEast.lng]]);
 
-	map.setView([0,actualY(map.getMaxZoom(),0)], 4);
+	map.setView([0,actualY(map.getMaxZoom(),0)], 0);
 
 	console.log(map.getPixelBounds());
 	console.log(map.getBounds());
