@@ -61,6 +61,21 @@
 	L.rectangle([[actualY(map.getMaxZoom(),bounds._southWest.lat),bounds._southWest.lng],[actualY(map.getMaxZoom(),bounds._northEast.lat),bounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
 	L.rectangle([[actualY(map.getMaxZoom(),mapBounds._southWest.lat),mapBounds._southWest.lng],[actualY(map.getMaxZoom(),mapBounds._northEast.lat),mapBounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
 
+
+
+	m = {
+		t: 200,
+		l: actualY(map.getMaxZoom(),1668 + yOffset),
+		b: 297,
+		r: actualY(map.getMaxZoom(),1710 + yOffset)
+	};
+
+	bounds = new L.LatLngBounds([map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())]);
+
+	// create an orange rectangle
+	L.rectangle([[actualY(map.getMaxZoom(),bounds._southWest.lat),bounds._southWest.lng],[actualY(map.getMaxZoom(),bounds._northEast.lat),bounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
+
+
 	function actualY (z, y) {
 		return y - Math.pow(2, (z-2));
 		//return Math.pow(2, (z - 2)) + y;
