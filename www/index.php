@@ -58,8 +58,8 @@
 	var bounds = new L.LatLngBounds([map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())]);
 
 	// create an orange rectangle
-	L.rectangle([[actualY(map.getMaxZoom(),bounds._southWest.lat),bounds._southWest.lng],[actualY(map.getMaxZoom(),bounds._northEast.lat),bounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
-	L.rectangle([[actualY(map.getMaxZoom(),mapBounds._southWest.lat),mapBounds._southWest.lng],[actualY(map.getMaxZoom(),mapBounds._northEast.lat),mapBounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
+	L.rectangle([[bounds._southWest.lat,bounds._southWest.lng],[bounds._northEast.lat,bounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
+	L.rectangle([[mapBounds._southWest.lat,mapBounds._southWest.lng],[mapBounds._northEast.lat,mapBounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
 
 
 
