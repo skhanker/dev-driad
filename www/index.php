@@ -25,6 +25,7 @@
 
 	L.tileLayer(image + 'tiles/{z}/{x}/{y}.png', {
 		attribution: 'The University of British Columbia',
+		tms: true,
 		continuousWorld: false,
 		noWrap: true
 	}).addTo(map);
