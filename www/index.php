@@ -29,7 +29,7 @@
 	var northEast = map.unproject([w, 0], map.getMaxZoom());
 	var mapBounds = new L.LatLngBounds(southWest, northEast);
 
-	map.fitBounds([[mapBounds._southWest.lat,actualY(map.getMaxZoom(),mapBounds._southWest.lng)],[mapBounds._northEast.lat,actualY(map.getMaxZoom(),mapBounds._northEast.lng)]]);
+	map.fitBounds([[actualY(map.getMaxZoom(),mapBounds._southWest.lat),mapBounds._southWest.lng],[actualY(map.getMaxZoom(),mapBounds._northEast.lat),mapBounds._northEast.lng]]);
 
 	map.setView([0,actualY(map.getMaxZoom(),0)], 4);
 
@@ -51,13 +51,9 @@
 
 	var bounds = new L.LatLngBounds([map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())]);
 
-	console.log(bounds);
-	console.log(bounds._southWest.lng);
-	console.log(actualY(map.getMaxZoom(),bounds._southWest.lng));
-
 	// create an orange rectangle
 	L.rectangle([[actualY(map.getMaxZoom(),bounds._southWest.lat),bounds._southWest.lng],[actualY(map.getMaxZoom(),bounds._northEast.lat),bounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
-	L.rectangle([southWest, northEast], {color: "#ff7800", weight: 1}).addTo(map);
+	L.rectangle([[actualY(map.getMaxZoom(),mapBounds._southWest.lat),mapBounds._southWest.lng],[actualY(map.getMaxZoom(),mapBounds._northEast.lat),mapBounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
 
 	function actualY (z, y) {
 		return y - Math.pow(2, (z-2));
