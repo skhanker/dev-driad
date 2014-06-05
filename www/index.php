@@ -16,7 +16,7 @@
 		echo "var image = 'tiles/{$_REQUEST['image']}/';";
     ?>
 	var map = L.map('map',{
-		//crs: L.CRS.Simple,
+		crs: L.CRS.Simple,
 		minZoom: 1,
 		maxZoom: 4
 	}).setView([-0, 0], 4);
@@ -25,7 +25,6 @@
 
 	L.tileLayer(image + 'tiles/{z}/{x}/{y}.png', {
 		attribution: 'The University of British Columbia',
-		tms: true,
 		continuousWorld: false,
 		noWrap: true
 	}).addTo(map);
