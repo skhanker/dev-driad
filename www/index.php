@@ -27,7 +27,7 @@
 
 	var southWest = map.unproject([0, h], map.getMaxZoom());
 	var northEast = map.unproject([w, 0], map.getMaxZoom());
-	map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+	map.fitBounds(new L.LatLngBounds(southWest, northEast));
 
 	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
