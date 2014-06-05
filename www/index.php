@@ -17,7 +17,6 @@
     ?>
 	var map = L.map('map',{
 		crs: L.CRS.Simple,
-		minZoom: 1,
 		maxZoom: 4
 	}).setView([0,0], 4);
 
