@@ -19,7 +19,7 @@
 		crs: L.CRS.Simple,
 		minZoom: 1,
 		maxZoom: 4
-	}).setView(map.unproject([0, 0], map.getMaxZoom()), 4);
+	}).setView([0,0], 4);
 
 	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
