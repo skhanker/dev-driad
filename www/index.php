@@ -22,7 +22,9 @@
 	var map = L.map('map',{
 		//crs: L.CRS.Simple,
 		maxZoom: 4,
-		minZoom: 0
+		minZoom: 0,
+		crs: L.CRS.EPSG4326,
+		continuousWorld: true
 	});
 
 	var southWest = map.unproject([0, h], map.getMaxZoom());
