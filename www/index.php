@@ -23,11 +23,13 @@
 		crs: L.CRS.Simple,
 		maxZoom: 4,
 		minZoom: 0
-	}).setView([0,0], 4);
+	});
 
 	var southWest = map.unproject([0, h], map.getMaxZoom());
 	var northEast = map.unproject([w, 0], map.getMaxZoom());
 	map.fitBounds(new L.LatLngBounds(southWest, northEast));
+
+	map.setView([0,0], 4);
 
 	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
@@ -45,7 +47,7 @@
 		r: 955
 	};
 
-	var bounds = [map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())];
+	var bounds = new L.LatLngBounds([map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())]);
 	// create an orange rectangle
 	L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);
 	L.rectangle([southWest, northEast], {color: "#ff7800", weight: 1}).addTo(map);
