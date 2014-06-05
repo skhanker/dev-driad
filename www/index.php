@@ -10,7 +10,7 @@
 
 <script>
 	<?php
-		$image_info = getimagesize("/var/www/html/dev-driad/www/tiles/map.jpg");
+		$image_info = getimagesize("/Library/Server/Web/Data/Sites/Default/dev-driad/www/tiles/map.jpg");
 		echo "var w = {$image_info[0]};\n";
 		echo "var h = {$image_info[1]};\n";
 	 ?>
