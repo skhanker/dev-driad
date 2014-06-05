@@ -61,7 +61,7 @@
 
 	function actualY (z, y) {
 		//return y - Math.pow(2, (z-2));
-		return Math.pow(2, (z - 2)) + y;
+		return Math.pow(2, (z - 3)) + y;
 	}
 </script>
 </body>
