@@ -34,8 +34,10 @@
 
 	map.setView([0,actualY(map.getMaxZoom(),0)], 0);
 
-	console.log(map.getPixelBounds());
+	var pb = map.getPixelBounds();
 	console.log(map.getBounds());
+
+	var yOffset = pb.max.y;
 
 	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
@@ -48,9 +50,9 @@
 
 	var m = {
 		t: 411,
-		l: actualY(map.getMaxZoom(),893 + 428),
+		l: 893 + yOffset,
 		b: 1325,
-		r: actualY(map.getMaxZoom(),955 + 428)
+		r: 955 + yOffset
 	};
 
 	var bounds = new L.LatLngBounds([map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())]);
@@ -60,8 +62,8 @@
 	L.rectangle([[actualY(map.getMaxZoom(),mapBounds._southWest.lat),mapBounds._southWest.lng],[actualY(map.getMaxZoom(),mapBounds._northEast.lat),mapBounds._northEast.lng]], {color: "#ff7800", weight: 1}).addTo(map);
 
 	function actualY (z, y) {
-		return y - Math.pow(2, (z-2));
-		//return Math.pow(2, (z - 2)) + y;
+		//return y - Math.pow(2, (z-2));
+		return Math.pow(2, (z - 2)) + y;
 	}
 </script>
 </body>
