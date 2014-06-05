@@ -34,6 +34,9 @@
 
 	map.setView([0,actualY(map.getMaxZoom(),0)], 4);
 
+	console.log(map.getPixelBounds());
+	console.log(map.getBounds());
+
 	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
 	L.tileLayer(image + 'tiles/{z}/{x}/{y}.png', {
