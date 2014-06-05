@@ -13,12 +13,20 @@
 	document.getElementById("map").style.width = "100%";
 	document.getElementById("map").style.height = "100%";
 	<?php
+		$iinfo = getimagesize("/var/www/html/dev-driad/www/tiles/{$_REQUEST['image']}.jpg.png");
+
 		echo "var image = 'tiles/{$_REQUEST['image']}/';";
+		echo "var w = {$iinfo[0]};";
+		echo "var h = {$iinfo[1]};";
     ?>
 	var map = L.map('map',{
 		crs: L.CRS.Simple,
 		maxZoom: 4
 	}).setView([0,0], 4);
+
+	var southWest = map.unproject([0, h], map.getMaxZoom());
+	var northEast = map.unproject([w, 0], map.getMaxZoom());
+	map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
 
 	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
