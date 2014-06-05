@@ -48,9 +48,9 @@
 
 	var m = {
 		t: 411,
-		l: actualY(map.getMaxZoom(),893 + 172),
+		l: actualY(map.getMaxZoom(),893 + 355),
 		b: 1325,
-		r: actualY(map.getMaxZoom(),955 + 172)
+		r: actualY(map.getMaxZoom(),955 + 355)
 	};
 
 	var bounds = new L.LatLngBounds([map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())]);
