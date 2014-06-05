@@ -41,9 +41,9 @@
 
 
 	fwrite(STDOUT, 'Running ImageMagick as User: ' . exec("whoami") . "\r\n");
-	fwrite(STDOUT, "Running Command: convert {$argv[1]} -background none -extent {$image_w}x{$image_h} PNG32:{$argv[1]}.png\r\n");
+	fwrite(STDOUT, "Running Command: convert {$argv[1]} -background none -gravity SouthWest -extent {$image_w}x{$image_h} PNG32:{$argv[1]}.png\r\n");
 
-	exec("convert {$argv[1]} -background none -extent {$image_w}x{$image_h} PNG32:{$argv[1]}.png");
+	exec("convert {$argv[1]} -background none -gravity SouthWest -extent {$image_w}x{$image_h} PNG32:{$argv[1]}.png");
 
 	$re = '/(\S*[\\|\/]{1})(\S*)?\.[jpg|png]?/';
 	preg_match($re, $argv[1], $matches);
