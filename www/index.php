@@ -35,9 +35,9 @@
 	map.setView([0,actualY(map.getMaxZoom(),0)], 0);
 
 	var pb = map.getPixelBounds();
-	console.log(map.getPixelOrigin());
+	var po = map.getPixelOrigin();
 
-	var yOffset = pb.max.y;
+	var yOffset = pb.max.y - po.y;
 
 	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
@@ -50,9 +50,9 @@
 
 	var m = {
 		t: 411,
-		l: actualY(map.getMaxZoom(),893 + yOffset),
+		l: 893 + yOffset,
 		b: 1325,
-		r: actualY(map.getMaxZoom(),955 + yOffset)
+		r: 955 + yOffset
 	};
 
 	var bounds = new L.LatLngBounds([map.unproject([m.t, m.l], map.getMaxZoom()), map.unproject([m.b, m.r], map.getMaxZoom())]);
