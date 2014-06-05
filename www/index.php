@@ -37,7 +37,7 @@
 	var pb = map.getPixelBounds();
 	var po = map.getPixelOrigin();
 
-	var yOffset = pb.max.y - po.y;
+	var yOffset = pb.max.y - po.y/2;
 
 	//map.setMaxBounds(new L.LatLngBounds([90,180], [-90,-180]));
 
